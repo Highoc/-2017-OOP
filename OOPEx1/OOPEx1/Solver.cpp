@@ -75,6 +75,8 @@ double LogEquation::derivative(double x) const
 
 double BisectionSolver::solve(const Equation* equation, double xMin, double xMax) const
 {
+	assert(equation);
+
 	double nowXMin(xMin), nowXMax(xMax), nowXMid(0);
 	double yLeft(equation->getY(xMin)), yRight(equation->getY(xMax)), yMid(0);
 	
@@ -116,6 +118,8 @@ double BisectionSolver::solve(const Equation* equation, double xMin, double xMax
 
 double NewtonSolver::solve(const Equation* equation, double xMin, double xMax) const
 {
+	assert(equation);
+
 	double nowX((xMin + xMax) / 2), nowY(equation->getY(nowX));
 
 	cout.precision((-1)*log10(EX));
