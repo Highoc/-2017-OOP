@@ -1,0 +1,5 @@
+﻿  Solver.cpp
+c:\users\highoc\documents\visual studio 2015\projects\hlcompiler\oopex1\oopex1\solver.cpp(82): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+c:\users\highoc\documents\visual studio 2015\projects\hlcompiler\oopex1\oopex1\solver.cpp(121): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  OOPEx1.vcxproj -> C:\Users\Highoc\Documents\Visual Studio 2015\Projects\HLCompiler\OOPEx1\Debug\OOPEx1.exe
+  OOPEx1.vcxproj -> C:\Users\Highoc\Documents\Visual Studio 2015\Projects\HLCompiler\OOPEx1\Debug\OOPEx1.pdb (Partial PDB)
