@@ -54,16 +54,9 @@ IntArray& IntArray::operator=(const IntArray& other)
 		return *this;
 	}
 
-	if (other.size_ > this->size_)
-	{
-		resize(other.size_);
-	} 
-	else if (other.size_ < this->size_)
-	{
-		resize(this->size_);
-	}
+	resize(other.size_); 
 
-	for (size_t i(0); i < size_; i++)
+	for (size_t i(0); i < this->size_; i++)
 	{
 		this->at(i) = other.at(i);
 	}
@@ -129,6 +122,11 @@ IntArray::const_iterator IntArray::end() const
 
 void IntArray::resize(size_t newSize)
 {
+	if (size_ == newSize)
+	{
+		return;
+	}
+
 	size_ = newSize;
 	if (newSize == 0)
 	{
@@ -139,7 +137,7 @@ void IntArray::resize(size_t newSize)
 
 	if (data_ == nullptr)
 	{
-		data_ = (T*) calloc(size_, sizeof(T));
+		data_ = (T* ) calloc(size_, sizeof(T));
 	}
 	else
 	{
