@@ -169,6 +169,8 @@ void IntArray::assign(size_type count, const T& value)
 
 void IntArray::assign(std::initializer_list<T> list)
 {
+	resize(list.size());
+
 	int i(0);
 	for (auto& now : list)
 	{
@@ -183,9 +185,9 @@ void IntArray::assign(iterator begin, iterator end)
 
 void IntArray::assign(const_iterator begin, const_iterator end)
 {
+	resize(0);
 	for (IntArray::const_iterator i(begin);i != end; ++i)
 	{
-		resize(0);
 		push_back(*i);
 	}
 }
