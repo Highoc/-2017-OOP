@@ -192,15 +192,10 @@ void IntArray::assign(const_iterator begin, const_iterator end)
 
 
 void swap(IntArray& first, IntArray& second)
-{
-	if (first.size() != second.size())
-	{
-		assert(!"Can't swap.");
-	}
-	
-	IntArray add = first;
+{	
+	IntArray temp = first;
 	first = second;
-	second = add;
+	second = temp;
 }
 
 bool operator==(const IntArray& first, const IntArray& second)
@@ -227,36 +222,42 @@ bool operator!=(const IntArray& first, const IntArray& second)
 
 bool operator<=(const IntArray& first, const IntArray& second)
 {
-	bool result = true;
-
-	if (first.size() != second.size())
+	for (IntArray::const_iterator i(first.begin()), j(second.begin());; ++i, ++j)
 	{
-		return 0;
-	}
+		if (*i != *j)
+		{
+			return (*i < *j) ? true : false;
+		}
 
-	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); ++i, ++j)
-	{
-		result = result && (*i <= *j);
+		if (i == first.end())
+		{
+			return true;
+		} 
+		else if (j == second.end())
+		{
+			return false;
+		}
 	}
-
-	return result;
 }
 
 bool operator>=(const IntArray& first, const IntArray& second)
 {
-	bool result = true;
-
-	if (first.size() != second.size())
+	for (IntArray::const_iterator i(first.begin()), j(second.begin());; ++i, ++j)
 	{
-		return 0;
-	}
+		if (*i != *j)
+		{
+			return (*i > *j) ? true : false;
+		}
 
-	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); ++i, ++j)
-	{
-		result = result && (*i >= *j);
+		if (j == second.end())
+		{
+			return true;
+		}
+		else if (i == first.end())
+		{
+			return false;
+		}
 	}
-
-	return result;
 }
 
 bool operator<(const IntArray& first, const IntArray& second)
