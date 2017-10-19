@@ -29,7 +29,7 @@ IntArray::IntArray(const IntArray& intArray) :
 }
 
 IntArray::IntArray(const std::initializer_list<T>& list) :
-	IntArray(list.size)
+	IntArray(list.size())
 {
 	int i(0);
 	for (auto& now : list)
@@ -56,17 +56,19 @@ IntArray& IntArray::operator=(const IntArray& other)
 
 	if (other.size_ > this->size_)
 	{
-		addMemory(other.size_ - this->size_);
+		resize(other.size_);
 	} 
 	else if (other.size_ < this->size_)
 	{
-		deleteMemory(this->size_ - other.size_);
+		resize(this->size_);
 	}
 
 	for (size_t i(0); i < size_; i++)
 	{
 		this->at(i) = other.at(i);
 	}
+
+	return *this;
 }
 
 
@@ -176,14 +178,14 @@ void IntArray::assign(std::initializer_list<T> list)
 	}
 }
 
-void IntArray::assign(iterator& begin, iterator& end)
+void IntArray::assign(iterator begin, iterator end)
 {
 	assign((const_iterator& ) begin, (const_iterator& ) end);
 }
 
-void IntArray::assign(const_iterator& begin, const_iterator& end)
+void IntArray::assign(const_iterator begin, const_iterator end)
 {
-	for (IntArray::const_iterator i(begin); i != end; i++)
+	for (IntArray::const_iterator i(begin);i != end; ++i)
 	{
 		resize(0);
 		push_back(*i);
@@ -212,7 +214,7 @@ bool operator==(const IntArray& first, const IntArray& second)
 		return 0;
 	}
 
-	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()) ; i++, j++)
+	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()) ; ++i, ++j)
 	{
 		result = result && (*i == *j);
 	}
@@ -234,7 +236,7 @@ bool operator<=(const IntArray& first, const IntArray& second)
 		return 0;
 	}
 
-	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); i++, j++)
+	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); ++i, ++j)
 	{
 		result = result && (*i <= *j);
 	}
@@ -251,7 +253,7 @@ bool operator>=(const IntArray& first, const IntArray& second)
 		return 0;
 	}
 
-	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); i++, j++)
+	for (IntArray::const_iterator i(first.begin()), j(second.begin()); result && (i != first.end()) && (j != second.end()); ++i, ++j)
 	{
 		result = result && (*i >= *j);
 	}

@@ -8,12 +8,11 @@
 
 #include "Iterator.hpp"
 
-class Exception {};
 
 class IntArray
 {
 public:
-	typedef int size_type;
+	typedef size_t size_type;
 	typedef int T;
 
 	typedef Iterator<T> iterator;
@@ -37,8 +36,8 @@ public:
 	
 	void assign(size_type count, const T& value);
 	void assign(std::initializer_list<T> list);
-	void assign(iterator& begin, iterator& end);
-	void assign(const_iterator& begin, const_iterator& end);
+	void assign(iterator begin, iterator end);
+	void assign(const_iterator begin, const_iterator end);
 
 	void clear();
 	size_type size() const;
@@ -54,8 +53,8 @@ public:
 private:
 	void resize(size_t newSize);
 
-	int size_;
-	int* data_;
+	size_t size_;
+	T* data_;
 };
 
 void swap(IntArray& first, IntArray& second);

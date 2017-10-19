@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="AddSource.cpp" />
     <ClCompile Include="IntArray.cpp" />
-    <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
