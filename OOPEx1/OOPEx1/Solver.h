@@ -49,14 +49,17 @@ public:
 class Solver {
 public:
 	virtual double solve(const Equation* equation, double xMin, double xMax) const = 0;
+	virtual double solve(const Equation& equation, double xMin, double xMax) const = 0;
 };
 
 class BisectionSolver : public Solver {
 public:
 	virtual double solve(const Equation* equation, double xMin, double xMax) const override;
+	virtual double solve(const Equation& equation, double xMin, double xMax) const override;
 };
 
 class NewtonSolver : public Solver {
 public:
 	virtual double solve(const Equation* equation, double xMin, double xMax) const override;
+	virtual double solve(const Equation& equation, double xMin, double xMax) const override;
 };

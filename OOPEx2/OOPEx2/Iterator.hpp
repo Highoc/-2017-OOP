@@ -5,22 +5,29 @@
 template<typename ValueType>
 class Iterator : public std::iterator<std::input_iterator_tag, ValueType>
 {
-	friend class IntArray;
+	//friend class Array<ValueType>;
 public:
+	Iterator();
 	Iterator(const Iterator& it);
+	Iterator(ValueType* p);
+
+	Iterator& operator=(const Iterator& other);
 
 	bool operator!=(const Iterator& other) const;
 	bool operator==(const Iterator& other) const;
 
 	typename Iterator::reference operator*() const;
 	Iterator& operator++();
+	Iterator& operator--();
 
 private:
-	Iterator(ValueType* p);
-	
 	ValueType* p;
 };
 
+template<typename ValueType>
+Iterator<ValueType>::Iterator() :
+	p(nullptr)
+{}
 
 template<typename ValueType>
 Iterator<ValueType>::Iterator(ValueType* p) :
@@ -31,6 +38,14 @@ template<typename ValueType>
 Iterator<ValueType>::Iterator(const Iterator& it) :
 	p(it.p)
 {}
+
+
+template<typename ValueType>
+Iterator<ValueType>& Iterator<ValueType>::operator=(const Iterator<ValueType>& other)
+{
+	this->p = other.p;
+	return *this;
+}
 
 template<typename ValueType>
 bool Iterator<ValueType>::operator!=(const Iterator& other) const
@@ -56,3 +71,11 @@ Iterator<ValueType>& Iterator<ValueType>::operator++()
 	++p;
 	return *this;
 }
+
+template<typename ValueType>
+Iterator<ValueType>& Iterator<ValueType>::operator--()
+{
+	--p;
+	return *this;
+}
+

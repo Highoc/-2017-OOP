@@ -116,6 +116,11 @@ double BisectionSolver::solve(const Equation* equation, double xMin, double xMax
 	}
 }
 
+double BisectionSolver::solve(const Equation& equation, double xMin, double xMax) const
+{
+	return solve(&equation, xMin, xMax);
+}
+
 double NewtonSolver::solve(const Equation* equation, double xMin, double xMax) const
 {
 	assert(equation);
@@ -132,4 +137,9 @@ double NewtonSolver::solve(const Equation* equation, double xMin, double xMax) c
 
 	cout << "x = " << nowX << " (Solution on [" << xMin << ", " << xMax << "])." << endl;
 	return nowX;
+}
+
+double NewtonSolver::solve(const Equation& equation, double xMin, double xMax) const
+{
+	return solve(&equation, xMin, xMax);
 }

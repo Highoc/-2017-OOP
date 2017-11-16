@@ -1,4 +1,4 @@
-#include <cassert>
+/*#include <cassert>
 #include <iostream>
 #include "IntArray.hpp"
 
@@ -92,4 +92,4 @@ int main() {
 	testPushPop();
 
 	return 0;
-}
+}*/

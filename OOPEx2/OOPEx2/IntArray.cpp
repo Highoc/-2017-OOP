@@ -1,4 +1,4 @@
-#include "IntArray.hpp"
+/*#include "IntArray.hpp"
 
 IntArray::IntArray():
 	size_(0), data_(nullptr)
@@ -270,4 +270,4 @@ bool operator<(const IntArray& first, const IntArray& second)
 bool operator>(const IntArray& first, const IntArray& second)
 {
 	return !(first <= second);
-}
+}*/

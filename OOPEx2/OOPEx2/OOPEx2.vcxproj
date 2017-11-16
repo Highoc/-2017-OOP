@@ -24,8 +24,10 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Exception.hpp" />
     <ClInclude Include="IntArray.hpp" />
     <ClInclude Include="Iterator.hpp" />
+    <ClInclude Include="RIterator.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D791998D-1053-4AB0-8FDF-84F30CF77DF2}</ProjectGuid>

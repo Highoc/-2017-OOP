@@ -1,4 +1,4 @@
-/*#include <cassert>
+#include <cassert>
 #include <iostream>
 
 
@@ -39,7 +39,8 @@ using Exception = std::exception;
 
 #else
 
-#include "Array.hpp"
+#include "IntArray.hpp"
+
 #if USE_TEMPLATED_REALIZATION
 using IntArray = Array<int>;
 #else
@@ -143,6 +144,7 @@ void testIteration() {
 		aReverseIter != a.rend(); ++aReverseIter) {
 		--counter;
 		--aIter;
+		
 		assert(*aReverseIter == counter);
 	}
 	assert(aIter == a.begin());
@@ -172,7 +174,6 @@ void testIterationConstness() {
 		*iter = counter++;
 	}
 	const IntArray b = a;
-
 }
 
 
@@ -187,5 +188,8 @@ int main() {
 	testExceptions();
 	testIterationConstness();
 
+
+	system("pause");
+
 	return 0;
-}*/
+}
