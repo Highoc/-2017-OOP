@@ -24,6 +24,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BubbleSort.hpp" />
     <ClInclude Include="Exception.hpp" />
     <ClInclude Include="IntArray.hpp" />
     <ClInclude Include="Iterator.hpp" />

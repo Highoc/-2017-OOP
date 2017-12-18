@@ -1,5 +1,6 @@
 #include "Solver.h"
 
+
 int main()
 {
 	cout << "Equation:\n"
@@ -10,7 +11,7 @@ int main()
 	cout << "Method:\n"
 		"\t1) Bisection;\n"
 		"\t2) Newton.\n\n";
-	
+
 	int equationN(0), methodN(0);
 	double xMin(0), xMax(0), a(0), b(0), c(0);
 
@@ -23,42 +24,57 @@ int main()
 	cout << "Method\t: "; cin >> methodN;
 
 
-	Solver *solver(nullptr);
-	switch (methodN)
-	{
-	case 1:
-		solver = new BisectionSolver();
-		break;
-	case 2:
-		solver = new NewtonSolver();
-		break;
-	default:
-		cout << "Unknow method.\n";
-		return 1;
-	}
+	//Solver *solver(nullptr);
+	//Equation* equation(nullptr);
 
-	Equation* equation(nullptr);
 	switch (equationN)
 	{
 	case 1:
-		equation = new SqrEquation(a, b, c);
+	{
+		Equation<Sqr> equation(a, b, c);
+		switch (methodN)
+		{
+		case 1:
+			BisectionSolver<Equation<Sqr>>().solve(equation, xMin, xMax);
+			break;
+		case 2:
+			NewtonSolver<Equation<Sqr>>().solve(equation, xMin, xMax);
+			break;
+		}
 		break;
-	case 2:
-		equation = new ExpEquation(a, b, c);
-		break;
-	case 3:
-		equation = new LogEquation(a, b, c);
-		break;
-	default:
-		cout << "Unknow equation.\n";
-		return 1;
 	}
-	
-	solver->solve(equation, xMin, xMax);
-
-	delete solver;
-	delete equation;
+	case 2:
+	{
+		Equation<Exp> equation(a, b, c);
+		switch (methodN)
+		{
+		case 1:
+			BisectionSolver<Equation<Exp>>().solve(equation, xMin, xMax);
+			break;
+		case 2:
+			NewtonSolver<Equation<Exp>>().solve(equation, xMin, xMax);
+			break;
+		}
+		break;
+	}
+	case 3:
+	{
+		Equation<Log> equation(a, b, c);
+		switch (methodN)
+		{
+		case 1:
+			BisectionSolver<Equation<Log>>().solve(equation, xMin, xMax);
+			break;
+		case 2:
+			NewtonSolver<Equation<Log>>().solve(equation, xMin, xMax);
+			break;
+		}
+		break;
+	}
+	}
 
 	system("pause");
 	return 0;
 }
+
+

@@ -9,6 +9,7 @@
 #include "Exception.hpp"
 #include "RIterator.hpp"
 #include "Iterator.hpp"
+#include "BubbleSort.hpp"
 
 template <typename T>
 class Array
@@ -42,6 +43,9 @@ public:
 
 	void clear();
 	size_t size() const;
+
+	void sort();
+	void printRange();
 
 	void push_back(const T& value);
 	void pop_back();
@@ -263,6 +267,23 @@ void Array<T>::resize(size_t newSize)
 	{
 		data_ = (T*) realloc(data_, size_ * sizeof(T));
 	}
+}
+
+template <typename T>
+void Array<T>::sort()
+{
+	Compare<int> compare;
+	customSort(begin(), end(), compare);
+}
+
+template <typename T>
+void Array<T>::printRange()
+{
+	for (size_t i(0); i < this->size_; i++)
+	{
+		std::cout << at(i) << " ";
+	}
+	std::cout << std::endl;
 }
 
 

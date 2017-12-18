@@ -17,9 +17,11 @@ public:
 	bool operator==(const Iterator& other) const;
 
 	typename Iterator::reference operator*() const;
+	Iterator operator+(const Iterator& other);
 	Iterator& operator++();
 	Iterator& operator--();
 
+	ValueType* getP() const;
 private:
 	ValueType* p;
 };
@@ -45,6 +47,18 @@ Iterator<ValueType>& Iterator<ValueType>::operator=(const Iterator<ValueType>& o
 {
 	this->p = other.p;
 	return *this;
+}
+
+template<typename ValueType>
+Iterator<ValueType> operator+(const Iterator<ValueType>& other, const int& n)
+{
+	return Iterator<ValueType>(other.getP() + n);
+}
+
+template<typename ValueType>
+ValueType* Iterator<ValueType>::getP() const
+{
+	return p;
 }
 
 template<typename ValueType>

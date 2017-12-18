@@ -1,4 +1,4 @@
-#include "Solver.h"
+/*#include "Solver.h"
 
 
 Equation::Equation(double a, double b, double c):
@@ -72,8 +72,8 @@ double LogEquation::derivative(double x) const
 }
 
 
-
-double BisectionSolver::solve(const Equation* equation, double xMin, double xMax) const
+template <typename E>
+double BisectionSolver<E>::solve(const E* equation, double xMin, double xMax) const
 {
 	assert(equation);
 
@@ -116,12 +116,14 @@ double BisectionSolver::solve(const Equation* equation, double xMin, double xMax
 	}
 }
 
-double BisectionSolver::solve(const Equation& equation, double xMin, double xMax) const
+template <typename E>
+double BisectionSolver<E>::solve(const E& equation, double xMin, double xMax) const
 {
 	return solve(&equation, xMin, xMax);
 }
 
-double NewtonSolver::solve(const Equation* equation, double xMin, double xMax) const
+template <typename E>
+double NewtonSolver<E>::solve(const E* equation, double xMin, double xMax) const
 {
 	assert(equation);
 
@@ -139,7 +141,8 @@ double NewtonSolver::solve(const Equation* equation, double xMin, double xMax) c
 	return nowX;
 }
 
-double NewtonSolver::solve(const Equation& equation, double xMin, double xMax) const
+template <typename E>
+double NewtonSolver<E>::solve(const E& equation, double xMin, double xMax) const
 {
 	return solve(&equation, xMin, xMax);
-}
+}*/

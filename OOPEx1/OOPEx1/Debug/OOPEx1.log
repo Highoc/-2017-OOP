@@ -1,2 +1,22 @@
-﻿  OOPEx1.vcxproj -> C:\Users\Highoc\Documents\Visual Studio 2015\Projects\OOP\OOPEx1\Debug\OOPEx1.exe
+﻿  Source.cpp
+c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(138): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(131): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(39): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double BisectionSolver<Equation<Sqr>>::solve(const E &,double,double) const"
+          with
+          [
+              E=Equation<Sqr>
+          ]
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(39): note: см. ссылку на создание экземпляров класса шаблон при компиляции "BisectionSolver<Equation<Sqr>>"
+c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(178): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(175): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(42): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double NewtonSolver<Equation<Sqr>>::solve(const E &,double,double) const"
+          with
+          [
+              E=Equation<Sqr>
+          ]
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(42): note: см. ссылку на создание экземпляров класса шаблон при компиляции "NewtonSolver<Equation<Sqr>>"
+  Создание кода...
+  Пропуск... (изменения не обнаружены)
+  Solver.cpp
+  OOPEx1.vcxproj -> C:\Users\Highoc\Documents\Visual Studio 2015\Projects\OOP\OOPEx1\Debug\OOPEx1.exe
   OOPEx1.vcxproj -> C:\Users\Highoc\Documents\Visual Studio 2015\Projects\OOP\OOPEx1\Debug\OOPEx1.pdb (Partial PDB)

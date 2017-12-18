@@ -40,7 +40,6 @@ using Exception = std::exception;
 #else
 
 #include "IntArray.hpp"
-
 #if USE_TEMPLATED_REALIZATION
 using IntArray = Array<int>;
 #else
@@ -144,7 +143,6 @@ void testIteration() {
 		aReverseIter != a.rend(); ++aReverseIter) {
 		--counter;
 		--aIter;
-		
 		assert(*aReverseIter == counter);
 	}
 	assert(aIter == a.begin());
@@ -174,6 +172,11 @@ void testIterationConstness() {
 		*iter = counter++;
 	}
 	const IntArray b = a;
+	counter = 0;
+	for (const auto& i : b) {
+		counter += i;
+	}
+	assert(counter == 45);
 }
 
 
@@ -188,6 +191,11 @@ int main() {
 	testExceptions();
 	testIterationConstness();
 
+	Array<int> a = { 7, 4, 3, 2, 8 };
+
+	a.printRange();
+	a.sort();
+	a.printRange();
 
 	system("pause");
 
