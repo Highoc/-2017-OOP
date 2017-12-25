@@ -40,6 +40,8 @@ void printTable();
 char getResult(int gA, int gB);
 int getMaxNameLength();
 
+//void print7Lines();
+
 void printLine(int nameLength, int nTeams, int nLength, int sLength);
 void printTitle(int nameLength, int nTeams, int nLength, int sLength);
 
@@ -47,18 +49,60 @@ void findWinPlace(pair<Points, Wins>& firstPlace, pair<Points, Wins>& secondPlac
 
 int main()
 {
-	string nameA, nameB, delA;
+	string nameA, nameB, delA1, delA2;
 	int goalsA = 0, goalsB = 0;
 	char delB = 0;
 
 	while (true)
 	{
-		cin >> nameA >> delA >> nameB >> delA >> goalsA >> delB >> goalsB;
+		cin >> nameA >> delA1;
+		if ((delA1 != "-") || !cin.good())
+		{
+			cin.clear();
+			string errorLine;
+			getline(cin, errorLine);
+			cout << "Wrong format.\n";// Ignoring: " << errorLine << "\n";
+			continue;
+		}
+
+		cin >> nameB >> delA2;
+		if ((delA2 != "-") || !cin.good())
+		{
+			cin.clear();
+			string errorLine;
+			getline(cin, errorLine);
+			cout << "Wrong format.\n";// Ignoring: " << errorLine << "\n";
+			continue;
+		}
+		cin >> goalsA >> delB;
+		if ((delB != ':') || !cin.good())
+		{
+			cin.clear();
+			string errorLine;
+			getline(cin, errorLine);
+			cout << "Wrong format.\n";// Ignoring: " << errorLine << "\n";
+			continue;
+		}
+		cin >> goalsB;
 		if (!cin.good())
+		{
+			cin.clear();
+			string errorLine;
+			getline(cin, errorLine);
+			cout << "Wrong format.\n"; // Ignoring: " << errorLine << "\n";
+			continue;
+		}
+
+		if (cin.eof())
 		{
 			cout << "Exit." << endl;
 			break;
 		}
+			if (!cin.eof() && !cin.good())
+			{
+				
+				continue;
+			}
 
 		int err = addToTables(nameA, nameB, goalsA, goalsB);
 		if (err == repeatedRecord)
@@ -72,6 +116,7 @@ int main()
 		else
 		{
 			printTable();
+			//print7Lines();
 		}
 		//cout << nameA << " - " << nameB << " - " << goalsA << delB << goalsB << endl;
 	}
@@ -305,3 +350,16 @@ void findWinPlace(pair<Points, Wins>& firstPlace, pair<Points, Wins>& secondPlac
 		//cout << thirdPlace.first << " " << thirdPlace.second << " " << endl << endl;
 	}
 }
+/*
+void print7Lines()
+{
+	for (auto& nowPairA : competitionTable)
+	{
+		//printf("%s |", nowPairA.first.c_str());
+		for (auto& nowPairB : winnersTable)
+		{
+			printf("%3c |", (char) nowPairA.second[nowPairB.first]);
+		}
+		printf("\n");
+	}
+}*/

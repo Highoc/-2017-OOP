@@ -1,20 +1,20 @@
 ﻿  Source.cpp
-c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(138): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(131): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(39): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double BisectionSolver<Equation<Sqr>>::solve(const E &,double,double) const"
+c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(115): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(108): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(38): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double BisectionSolver<Sqr>::solve(const E &,double,double) const"
           with
           [
-              E=Equation<Sqr>
+              E=Sqr
           ]
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(39): note: см. ссылку на создание экземпляров класса шаблон при компиляции "BisectionSolver<Equation<Sqr>>"
-c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(178): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(175): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(42): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double NewtonSolver<Equation<Sqr>>::solve(const E &,double,double) const"
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(38): note: см. ссылку на создание экземпляров класса шаблон при компиляции "BisectionSolver<Sqr>"
+c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(155): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\solver.h(152): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(41): note: см. ссылку на создание экземпляров функции шаблон при компиляции "double NewtonSolver<Sqr>::solve(const E &,double,double) const"
           with
           [
-              E=Equation<Sqr>
+              E=Sqr
           ]
-  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(42): note: см. ссылку на создание экземпляров класса шаблон при компиляции "NewtonSolver<Equation<Sqr>>"
+  c:\users\highoc\documents\visual studio 2015\projects\oop\oopex1\oopex1\source.cpp(41): note: см. ссылку на создание экземпляров класса шаблон при компиляции "NewtonSolver<Sqr>"
   Создание кода...
   Пропуск... (изменения не обнаружены)
   Solver.cpp

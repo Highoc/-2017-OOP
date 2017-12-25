@@ -31,42 +31,42 @@ int main()
 	{
 	case 1:
 	{
-		Equation<Sqr> equation(a, b, c);
+		Sqr equation(a, b, c);
 		switch (methodN)
 		{
 		case 1:
-			BisectionSolver<Equation<Sqr>>().solve(equation, xMin, xMax);
+			BisectionSolver<Sqr>().solve(equation, xMin, xMax);
 			break;
 		case 2:
-			NewtonSolver<Equation<Sqr>>().solve(equation, xMin, xMax);
+			NewtonSolver<Sqr>().solve(equation, xMin, xMax);
 			break;
 		}
 		break;
 	}
 	case 2:
 	{
-		Equation<Exp> equation(a, b, c);
+		Exp equation(a, b, c);
 		switch (methodN)
 		{
 		case 1:
-			BisectionSolver<Equation<Exp>>().solve(equation, xMin, xMax);
+			BisectionSolver<Exp>().solve(equation, xMin, xMax);
 			break;
 		case 2:
-			NewtonSolver<Equation<Exp>>().solve(equation, xMin, xMax);
+			NewtonSolver<Exp>().solve(equation, xMin, xMax);
 			break;
 		}
 		break;
 	}
 	case 3:
 	{
-		Equation<Log> equation(a, b, c);
+		Log equation(a, b, c);
 		switch (methodN)
 		{
 		case 1:
-			BisectionSolver<Equation<Log>>().solve(equation, xMin, xMax);
+			BisectionSolver<Log>().solve(equation, xMin, xMax);
 			break;
 		case 2:
-			NewtonSolver<Equation<Log>>().solve(equation, xMin, xMax);
+			NewtonSolver<Log>().solve(equation, xMin, xMax);
 			break;
 		}
 		break;
